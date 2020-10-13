@@ -1,0 +1,74 @@
+﻿@model ContenManagementSystem.Models.CompanyDescClass
+
+@{
+    ViewBag.Title = "View";
+
+}
+
+<div id="Desc_mainGrid">
+
+
+        <div id="maindesc">@Html.DisplayFor(model => model.ShortDesc)</div>
+
+        <hr />
+        <div id="secDesc">
+            <div class="descitem"><strong><img src="~/images/Icon/iconfinder_Location_4200473.png" width="15px" />
+                    @Html.DisplayNameFor(model => model.Address)
+                </strong><br />
+                @Html.DisplayFor(model => model.Address)
+            </div>
+
+            <div class="descitem"><strong><img src="~/images/Icon/iconfinder_SocialMedia_Website-Outline_2959741.png" width="15px" />
+                    @Html.DisplayNameFor(model => model.Website)
+                </strong><br /><a href="@Html.DisplayFor(model => model.Website)">
+    @Html.DisplayFor(model => model.Website)
+</a>
+            </div>
+            <div class="descitem"><strong><img src="~/images/Icon/iconfinder_multimedia-01_2849835.png" width="15px" />
+                    @Html.DisplayNameFor(model => model.Telephone)
+                </strong><br />
+                @Html.DisplayFor(model => model.Telephone)
+            </div>
+        
+    </div>
+        
+
+      
+   
+
+        <div id="hours">
+            <table>
+                @foreach (string day in "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday".Split(','))
+                {
+
+                <tr>
+                    <td><strong>@day  </strong></td>
+                    <td>@Model.OpenningHours[day]
+                    <span> - </span>
+                    @Model.ClosingHours[day]
+                    </td>
+                </tr>
+
+                }
+            </table>
+        </div>
+        <div id="staff">
+            <h4><strong>Staff</strong></h4>
+            <div id="staffFlex">
+
+
+                @foreach (ContenManagementSystem.Models.Employee emp in Model.Employees)
+                {
+                    <div class="staffdiv">
+                        <img src="@emp.pictureID" width="50" /><br />
+                        <strong>@emp.empName</strong>
+                        <p>@emp.position</p>
+                    </div>
+                }
+            </div>
+        </div>
+        </div>
+<p style="float:right;">
+    | @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ })
+
+</p>
