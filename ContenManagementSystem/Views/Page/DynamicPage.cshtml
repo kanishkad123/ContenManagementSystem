@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "DynamicPage";
+    Layout = "~/Views/Shared/_DynamicLayout.cshtml";
+}
+
+    <div id="Container">
+        @(new HtmlString(ViewData["innerHtml"].ToString()))
+    </div>

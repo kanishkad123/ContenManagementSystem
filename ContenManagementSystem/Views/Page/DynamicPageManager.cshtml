@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DynamicPageManager</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <label for="page">Page : </label>
+            <select id="page" name="page">
+                <option value="1">One</option>
+            </select>
+            <br />
+            <label for="section">Section : </label>
+            <select id="section" name="section">
+                <option value="1">One</option>
+            </select>
+            <br />
+            <label for="numberOfDivisions">Number of divisions : </label>
+            <input id="numberOfDivisions" name="numberOfDivisions" type="number" max="3" min="1" />
+            <br />
+            <label for="division">Division : </label>
+            <select id="division" name="division">
+                <option>One</option>
+            </select>
+            <br />
+            <label for="sectiontext">Section Text : </label>
+            <textarea rows="5" id="sectiontext"></textarea>
+            <br />
+            <input type="button" value="Update" />
+        </div>
+    </div>
+</body>
+</html>
