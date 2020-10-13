@@ -37,17 +37,24 @@ textarea {
     #Desc_mainGrid #secDesc {
         grid-area: secDesc;
         display: flex;
-        flex-wrap:wrap;
-        justify-content:space-around;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        text-align: center;
+        
+        
     }
+        #Desc_mainGrid #secDesc .descitem {
+            margin: .5em;
+        }
+        
 
-    #Desc_mainGrid #hours {
-        grid-area:hours;
-        display:block;
-    }
+        #Desc_mainGrid #hours {
+            grid-area: hours;
+            display: block;
+        }
 
             #Desc_mainGrid #hours td {
-                padding: 0 1em;
+                padding: 0 .5em;
             }
 
     #Desc_mainGrid #staff {
@@ -77,3 +84,18 @@ textarea {
             #Desc_mainGrid .staffdiv p {
                 font-size: smaller;
             }
+
+
+@media only screen and (max-width:768px) {
+    #Desc_mainGrid {
+        grid-template-areas: 'maindesc maindesc' 'secDesc hours' 'staff staff';
+        grid-row-gap: 2em;
+    }
+}
+
+@media only screen and (max-width:1000px) and (min-width:768px) {
+    #Desc_mainGrid {
+        grid-template-areas: 'maindesc hours' 'staff secDesc';
+        grid-row-gap: 2em;
+    }
+}

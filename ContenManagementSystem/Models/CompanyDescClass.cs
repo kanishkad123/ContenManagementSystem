@@ -54,6 +54,7 @@ namespace ContenManagementSystem.Models
             Employees.Add(new Employee() { pictureID = "../images/4.jpg", empName = "Borat", position = "Human resauces" });
             Employees.Add(new Employee() { pictureID = "../images/5.jpg", empName = "Johanna", position = "Junior Developer" });
 
+
         }
     }
 
