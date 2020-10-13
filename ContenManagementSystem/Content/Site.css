@@ -22,3 +22,80 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+#Desc_mainGrid {
+    padding: 1em;
+    display:grid;
+    grid-template-areas:'maindesc maindesc hours staff staff'
+                    'secDesc secDesc hours staff staff';
+}
+    #Desc_mainGrid #maindesc {
+        grid-area:maindesc;
+    }
+
+    #Desc_mainGrid #secDesc {
+        grid-area: secDesc;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        text-align: center;
+        
+        
+    }
+        #Desc_mainGrid #secDesc .descitem {
+            margin: .5em;
+        }
+        
+
+        #Desc_mainGrid #hours {
+            grid-area: hours;
+            display: block;
+        }
+
+            #Desc_mainGrid #hours td {
+                padding: 0 .5em;
+            }
+
+    #Desc_mainGrid #staff {
+        grid-area: staff;
+        min-width: 400px;
+      
+    }
+    #Desc_mainGrid #staff h4 {
+        padding-left: 1em;
+    }
+        #Desc_mainGrid #staffFlex {
+    text-align: center;
+    grid-area: staff;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ 
+  
+            #Desc_mainGrid .staffdiv {
+        
+                width:50px;
+                overflow:hidden;
+                color: #2b2b2b;
+            }
+
+            #Desc_mainGrid .staffdiv p {
+                font-size: smaller;
+            }
+
+
+@media only screen and (max-width:768px) {
+    #Desc_mainGrid {
+        grid-template-areas: 'maindesc maindesc' 'secDesc hours' 'staff staff';
+        grid-row-gap: 2em;
+    }
+}
+
+@media only screen and (max-width:1000px) and (min-width:768px) {
+    #Desc_mainGrid {
+        grid-template-areas: 'maindesc hours' 'staff secDesc';
+        grid-row-gap: 2em;
+    }
+}
