@@ -10,13 +10,13 @@ namespace ContenManagementSystem.Controllers
     public class CompanyDescController : Controller
     {
         // GET: CompanyDesc
-        [ActionName("View")]
+        //[ActionName("View")]
         public ActionResult Index()
         {
             CompanyDescClass company = new CompanyDescClass();
             company.pullData();
 
-            return View(company);
+            return View("View",company);
         }
 
 
