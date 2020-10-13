@@ -13,6 +13,9 @@ namespace ContenManagementSystem.Models
 
         public String videourl { get; set; }
 
+        public int noofLikes { get; set; }
+        public String videoDescription { get; set; }
+
 
     }
 }
