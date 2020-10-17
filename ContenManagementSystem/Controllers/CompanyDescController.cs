@@ -9,13 +9,26 @@ namespace ContenManagementSystem.Controllers
 {
     public class CompanyDescController : Controller
     {
+        CompanyDescClass company = new CompanyDescClass();
+        Boolean initialized = false;
+
         // GET: CompanyDesc
         [ActionName("View")]
         public ActionResult Index()
         {
-            CompanyDescClass company = new CompanyDescClass();
-            company.pullData();
+            if (!initialized) {
+                company.pullData(); 
+                initialized = true;
+            } 
 
+
+
+            return View(company);
+        }
+
+        public ActionResult Edit(CompanyDescClass company)
+        {
+            this.company = company;
             return View(company);
         }
 
