@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 
 namespace ContenManagementSystem.Controllers
 {
@@ -20,16 +21,20 @@ namespace ContenManagementSystem.Controllers
                 company.pullData(); 
                 initialized = true;
             } 
-
-
-
             return View(company);
         }
 
+        [HttpGet]
         public ActionResult Edit(CompanyDescClass company)
         {
-            this.company = company;
+            System.Diagnostics.Debug.WriteLine(company.Address);
             return View(company);
+        }
+
+
+        public ActionResult ReView(CompanyDescClass company)
+        {
+            return View("View", company);
         }
 
 
