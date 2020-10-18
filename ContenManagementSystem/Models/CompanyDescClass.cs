@@ -7,6 +7,8 @@ namespace ContenManagementSystem.Models
 {
     public class CompanyDescClass
     {
+
+        public int CompanyDescClassID { get; set; }
         public string ShortDesc { get; set; } = "";
         public string Address { get; set; } = "";
         public string Website { get; set; } = "";

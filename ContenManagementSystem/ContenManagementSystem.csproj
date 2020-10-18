@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CompanyDescController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -186,6 +187,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -258,6 +260,11 @@
     <Content Include="Views\Page\DynamicPage.cshtml" />
     <Content Include="Views\Page\DynamicPageManager.cshtml" />
     <Content Include="Views\CompanyDesc\View.cshtml" />
+    <Content Include="Views\CompanyDesc\Edit.cshtml" />
+    <Content Include="Views\CompanyDesc\_View1.cshtml" />
+    <Content Include="Views\CompanyDesc\_View3.cshtml" />
+    <Content Include="Views\MainPage\Main.cshtml" />
+    <Content Include="Views\MainPage\_CompanyDesc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
