@@ -18,6 +18,21 @@ namespace ContenManagementSystem
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "Page",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Page", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "PageManager",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Page", action = "PageManager"}
+            );
+            routes.MapRoute(
+                name: "CompanyDesc",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "CompanyDesc", action = "Index" }
+            );
         }
     }
 }

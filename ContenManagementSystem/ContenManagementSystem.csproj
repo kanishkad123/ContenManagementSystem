@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,6 +250,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_DynamicLayout.cshtml" />
+    <Content Include="Views\Page\DynamicPage.cshtml" />
+    <Content Include="Views\Page\DynamicPageManager.cshtml" />
     <Content Include="Views\CompanyDesc\View.cshtml" />
     <Content Include="Views\CompanyDesc\Edit.cshtml" />
     <Content Include="Views\CompanyDesc\_View1.cshtml" />

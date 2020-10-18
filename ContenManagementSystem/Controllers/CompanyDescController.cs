@@ -14,21 +14,21 @@ namespace ContenManagementSystem.Controllers
         Boolean initialized = false;
 
         // GET: CompanyDesc
-        [ActionName("View")]
+        //[ActionName("View")]
         public ActionResult Index()
         {
             if (!initialized) {
                 company.pullData(); 
                 initialized = true;
-            } 
-            return View(company);
+            }
+            return View("View", company);
         }
 
         [HttpGet]
         public ActionResult Edit(CompanyDescClass company)
         {
             System.Diagnostics.Debug.WriteLine(company.Address);
-            return View(company);
+            return View("View", company);
         }
 
 
