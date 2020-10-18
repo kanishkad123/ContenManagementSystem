@@ -8,6 +8,7 @@ namespace ContenManagementSystem.Models
 {
     public class LeftFooterModel
     {
+        public int LeftFooterModelID { get; set; }
         public String para1 { get; set; }
         public String para2 { get; set; }
 

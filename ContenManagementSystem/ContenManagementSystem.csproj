@@ -171,7 +171,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CompanyDescController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\LeftFooterController.cs" />
@@ -261,13 +260,10 @@
     <Content Include="Views\Shared\_DynamicLayout.cshtml" />
     <Content Include="Views\Page\DynamicPage.cshtml" />
     <Content Include="Views\Page\DynamicPageManager.cshtml" />
-    <Content Include="Views\CompanyDesc\View.cshtml" />
-    <Content Include="Views\CompanyDesc\Edit.cshtml" />
-    <Content Include="Views\CompanyDesc\_View1.cshtml" />
-    <Content Include="Views\CompanyDesc\_View3.cshtml" />
     <Content Include="Views\MainPage\Main.cshtml" />
     <Content Include="Views\MainPage\_CompanyDesc.cshtml" />
     <Content Include="Views\LeftFooter\LeftFooterView.cshtml" />
+    <Content Include="Views\MainPage\_LeftFooter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
