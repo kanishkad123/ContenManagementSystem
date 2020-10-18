@@ -33,6 +33,11 @@ namespace ContenManagementSystem
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "CompanyDesc", action = "Index" }
             );
+            routes.MapRoute(
+                name: "LeftFooter",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "LeftFooter", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }
