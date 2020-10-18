@@ -29,6 +29,11 @@ namespace ContenManagementSystem.Controllers
             //Rashed View
                 viewModel.company.pullData();
                 initialized = true;
+
+            //Kanishka View
+                ViewData["innerHtml"] = "<div id =\"div1\">" +
+                "<div class='container'><div class='row'><div class='col-md-6'><p>This part is handled by bootstrap</p></div>" +
+                "<div class='col-md-6'><p>Section divided into 2 parts</p></div></div></div></div>";
             }
 
             return View("Main", viewModel);
