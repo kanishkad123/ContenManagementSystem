@@ -25,6 +25,11 @@ namespace ContenManagementSystem.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult edit() {
+
+            return View();
+        } 
 
     }
 }

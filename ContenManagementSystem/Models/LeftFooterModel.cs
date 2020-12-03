@@ -7,7 +7,9 @@ using System.Web;
 namespace ContenManagementSystem.Models
 {
     public class LeftFooterModel
-    {
+    {   
+        [System.ComponentModel.DataAnnotations.Key]
+        public int Id { get; set; }
         public String para1 { get; set; }
         public String para2 { get; set; }
 
