@@ -268,6 +268,11 @@
     <Content Include="Views\MainPage\Main.cshtml" />
     <Content Include="Views\MainPage\_CompanyDesc.cshtml" />
     <Content Include="Views\LeftFooter\LeftFooterView.cshtml" />
+<<<<<<< Updated upstream
+=======
+    <Content Include="Views\MainPage\_LeftFooter.cshtml" />
+    <Content Include="Views\LeftFooter\View.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
