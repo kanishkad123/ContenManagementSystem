@@ -18,6 +18,14 @@ namespace ContenManagementSystem.Models
         public int noofLikes { get; set; }
         public String videoDescription { get; set; }
 
-
+        public LeftFooterModel(int id, string para1, string para2, string videourl, int noofLikes, string videoDescription)
+        {
+            Id = id;
+            this.para1 = para1;
+            this.para2 = para2;
+            this.videourl = videourl;
+            this.noofLikes = noofLikes;
+            this.videoDescription = videoDescription;
+        }
     }
 }
