@@ -172,18 +172,22 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Constants\PageConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\LeftFooterController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="DAL\CompanyContext.cs" />
+    <Compile Include="DAL\CompanyInitializer.cs" />
     <Compile Include="DAL\DataInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CompanyOpenHours.cs" />
     <Compile Include="Models\CompanyDescClass.cs" />
-    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\CompanyEmployee.cs" />
     <Compile Include="Models\HTMLElement.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeftFooterModel.cs" />
@@ -269,6 +273,11 @@
     <Content Include="Views\LeftFooter\LeftFooterView.cshtml" />
     <Content Include="Views\MainPage\_LeftFooter.cshtml" />
     <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Company\Delete.cshtml" />
+    <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
