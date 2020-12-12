@@ -29,7 +29,13 @@ namespace ContenManagementSystem.Controllers
 
         public ActionResult PageManager()
         {
-            return View("DynamicPageManager");
+            PageManagerView pv = new PageManagerView();
+            using (ApplicationDbContext dbContext = new ApplicationDbContext())
+            {
+                var pages = dbContext.PageStructures.Select(p => new SelectListItem {Value=p.pageName,Text=p.pageName });
+                pv.pages = new SelectList(pages, "Value", "Text");
+                return View("DynamicPageManager",pv);
+            }
         }
 
         public ActionResult PageCreator()
@@ -40,7 +46,7 @@ namespace ContenManagementSystem.Controllers
         [HttpPost]
         public ActionResult savePageSettings(PageManagerView pageManagerView)
         {
-            string s = markupCreator(pageManagerView);
+            //string s = markupCreator(pageManagerView);
 
             var doc = new HtmlDocument();
             doc.LoadHtml(s);
@@ -68,21 +74,20 @@ namespace ContenManagementSystem.Controllers
             return context.Pages.Where(p => p.PageId == pageId).Select(p => p.PageHTML).FirstOrDefault();
         }
 
-        private string markupCreator(PageManagerView pageManagerView)
-        {            
-            string s = "<div class='container'><div class='row'>";
-            for (int i = 0; i < Convert.ToInt32(pageManagerView.NumberOfDivisions); i++)
-            {
-                s += PageConstants.cols[Convert.ToInt32(pageManagerView.NumberOfDivisions)];
-            }
-            s += "</div></div>";
-            return s;
-        }
+        //private string markupCreator(PageManagerView pageManagerView)
+        //{            
+        //    string s = "<div class='container'><div class='row'>";
+        //    for (int i = 0; i < Convert.ToInt32(pageManagerView.NumberOfDivisions); i++)
+        //    {
+        //        s += PageConstants.cols[Convert.ToInt32(pageManagerView.NumberOfDivisions)];
+        //    }
+        //    s += "</div></div>";
+        //    return s;
+        //}
 
         [HttpPost]
         public JsonResult temp(Tester model)
         {
-            Console.WriteLine(model.pageName);
             string s = "<div class='container'>";
             for (int i = 0; i < Convert.ToInt32(model.numberOfSections); i++)
             {
@@ -94,11 +99,21 @@ namespace ContenManagementSystem.Controllers
                 s += "</div>";
             }
             s += "</div>";
-            //return s;
 
+            using (ApplicationDbContext dbContext = new ApplicationDbContext())
+            {
+                dbContext.Pages.Add(new Page {PageId=model.pageName, PageHTML=s });
+                dbContext.SaveChanges();
+                dbContext.PageStructures.Add(new PageStructure
+                {
+                    pageName = model.pageName,
+                    numberOfSections = model.numberOfSections,
+                    numberOfDivisions = model.numberOfDivisions
+                });
+                dbContext.SaveChanges();
+            }
             return Json(new { result = "Success" });
         }
-
     }
 
     public class Tester

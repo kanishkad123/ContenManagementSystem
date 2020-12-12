@@ -37,5 +37,6 @@ namespace ContenManagementSystem.Models
         public System.Data.Entity.DbSet<ContenManagementSystem.Models.LeftFooterModel> LeftFooterModels { get; set; }*/
 
         public System.Data.Entity.DbSet<ContenManagementSystem.Models.Page> Pages { get; set; }
+        public System.Data.Entity.DbSet<ContenManagementSystem.Models.PageStructure> PageStructures { get; set; }
     }
 }
