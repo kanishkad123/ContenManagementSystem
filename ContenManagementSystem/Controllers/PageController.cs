@@ -16,13 +16,25 @@ namespace ContenManagementSystem.Controllers
         public ActionResult Index()
         {
             string pageId = Convert.ToString(Url.RequestContext.RouteData.Values["id"]);
-            ViewData["innerHtml"] = getDataByPageID(pageId);
+            if (pageId != "")
+            {
+                ViewData["innerHtml"] = getDataByPageID(pageId);
+            }
+            else
+            {
+                ViewData["innerHtml"] = "";
+            }
             return View("DynamicPage");
         }
 
         public ActionResult PageManager()
         {
             return View("DynamicPageManager");
+        }
+
+        public ActionResult PageCreator()
+        {
+            return View("PageCreator");
         }
 
         [HttpPost]
@@ -66,5 +78,36 @@ namespace ContenManagementSystem.Controllers
             s += "</div></div>";
             return s;
         }
+
+        [HttpPost]
+        public JsonResult temp(Tester model)
+        {
+            Console.WriteLine(model.pageName);
+            string s = "<div class='container'>";
+            for (int i = 0; i < Convert.ToInt32(model.numberOfSections); i++)
+            {
+                s += PageConstants.rows + i;
+                for (int j = 0; j < Convert.ToInt32(model.numberOfDivisions); j++)
+                {
+                    s += PageConstants.cols[Convert.ToInt32(model.numberOfDivisions)];
+                }
+                s += "</div>";
+            }
+            s += "</div>";
+            //return s;
+
+            return Json(new { result = "Success" });
+        }
+
+    }
+
+    public class Tester
+    {
+        public string pageName { get; set; }
+        public string numberOfSections { get; set; }
+        public string sectionNumber { get; set; }
+        public string numberOfDivisions { get; set; }
+        public string divisionNumber { get; set; }
+        public string divisionType { get; set; }
     }
 }
