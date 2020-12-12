@@ -8,9 +8,7 @@ namespace ContenManagementSystem.Models
     public class Page
     {
         public string PageId { get; set; }
-        public SettingsModel settings { get; set; }
-        public Page childEntitiy { get; set; }
-        public Dictionary<string, HTMLElement> elements{ get; set;}
+        public string PageHTML { get; set; }
     }
 
     public class PageManagerView

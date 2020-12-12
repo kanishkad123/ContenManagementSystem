@@ -9,6 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ContenManagementSystem.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.IO;
+using ContenManagementSystem.Utility;
 
 namespace ContenManagementSystem.Controllers
 {
@@ -72,6 +75,14 @@ namespace ContenManagementSystem.Controllers
             {
                 return View(model);
             }
+
+            var user = await UserManager.FindByEmailAsync(model.Email);
+            if (user != null)
+                if (!await UserManager.IsEmailConfirmedAsync(user.Id))
+                {
+                    ModelState.AddModelError("", "Email not confirmed.");
+                    return View("");
+                }
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
@@ -152,17 +163,27 @@ namespace ContenManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                ApplicationDbContext context = new ApplicationDbContext();
+                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+                if (!roleManager.RoleExists("WebsiteUser"))
+                {
+                    var role = new IdentityRole();
+                    role.Name = "WebsiteUser";
+                    roleManager.Create(role);
+                }
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    UserManager.AddToRole(user.Id, "WebsiteUser");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    using (StreamReader reader = new StreamReader(Server.MapPath("~/MailTemplate/AccountConfirmation.html")))
+                    {
+                        string body = reader.ReadToEnd();
+                        string modBody = body.Replace("{0}", model.Email).Replace("{1}", callbackUrl);
+                        if (SendEmail.EmailSend(model.Email, "Confirm your account", modBody, true))
+                            return RedirectToAction("Login", "Account");
+                    }
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

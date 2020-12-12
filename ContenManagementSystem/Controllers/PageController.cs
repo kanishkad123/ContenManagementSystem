@@ -1,4 +1,5 @@
-﻿using ContenManagementSystem.Models;
+﻿using ContenManagementSystem.Constants;
+using ContenManagementSystem.Models;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,14 @@ using System.Web.Mvc;
 
 namespace ContenManagementSystem.Controllers
 {
+    //[Authorize]
     public class PageController : Controller
     {
         // GET: Page
         public ActionResult Index()
         {
-            ViewData["innerHtml"] = "<div id =\"div1\">" +
-                "<div class='container'><div class='row'><div class='col-md-6'><p>Hello</p></div><div class='col-md-6'><p>Test</p></div></div></div></div>";
+            string pageId = Convert.ToString(Url.RequestContext.RouteData.Values["id"]);
+            ViewData["innerHtml"] = getDataByPageID(pageId);
             return View("DynamicPage");
         }
 
@@ -34,22 +36,32 @@ namespace ContenManagementSystem.Controllers
             HtmlNode selectedNode = htmlBody.SelectSingleNode("//div[" + pageManagerView.SectionId + "]/div[" + pageManagerView.DivisionId + "]");
             selectedNode.AppendChild(HtmlNode.CreateNode("<p>"+pageManagerView.Sectiontext+"</p>"));
             ViewData["innerHtml"] = "<div id =\"div1\"><div class='container'>" + htmlBody.OuterHtml + "</div></div>";
-            return View("DynamicPage",ViewData);
+            ApplicationDbContext context = new ApplicationDbContext();
+            var page = context.Pages.Where(p => p.PageId == "test").FirstOrDefault();
+            if(page!= null)
+            {
+                page.PageHTML = Convert.ToString(ViewData["innerHtml"]);
+                context.SaveChanges();
+            }
+            //context.Pages.Add(new Page() {PageId = "test", PageHTML = Convert.ToString(ViewData["innerHtml"]) });
+            //context.SaveChangesAsync();
+            //ViewData["innerHTML"] = getDataByPageID("test");
+            //return View("DynamicPage",ViewData);
+            return RedirectToAction("Index", "Page", new { id ="test"});
+        }
+
+        private string getDataByPageID(string pageId)
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            return context.Pages.Where(p => p.PageId == pageId).Select(p => p.PageHTML).FirstOrDefault();
         }
 
         private string markupCreator(PageManagerView pageManagerView)
-        {
-            Dictionary<int,string> cols = new Dictionary<int, string>();
-            cols.Add(1,"<div class='col-md-12'></div>");
-            cols.Add(2,"<div class='col-md-6'></div>");
-            cols.Add(3,"<div class='col-md-4'></div>");
-            cols.Add(4,"<div class='col-md-3'></div>");
-            cols.Add(6,"<div class='col-md-2'></div>");
-            cols.Add(12,"<div class='col-md-1'></div>");
+        {            
             string s = "<div class='container'><div class='row'>";
             for (int i = 0; i < Convert.ToInt32(pageManagerView.NumberOfDivisions); i++)
             {
-                s += cols[Convert.ToInt32(pageManagerView.NumberOfDivisions)];
+                s += PageConstants.cols[Convert.ToInt32(pageManagerView.NumberOfDivisions)];
             }
             s += "</div></div>";
             return s;
