@@ -4,9 +4,15 @@
     ViewBag.Title = "main";
 }
 
-<h2>View</h2>
+@{
+    Html.RenderPartial("_CompanyDesc");
+}
+
+@{ 
+    Html.RenderPartial("../Page/DynamicPage");
+}
 
 
 @{
-    Html.RenderPartial("_CompanyDesc");
+    Html.RenderPartial("_LeftFooter");
 }

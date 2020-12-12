@@ -9,6 +9,7 @@ namespace ContenManagementSystem.Models
     {
         public int ViewModelID { get; set; }
         public CompanyDescClass company { get; set; } = new CompanyDescClass();
+        public LeftFooterModel lfm { get; set; } = new LeftFooterModel();
 
         public ViewModel()
         {
