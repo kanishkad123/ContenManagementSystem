@@ -81,9 +81,13 @@ namespace ContenManagementSystem.DAL
 
             var FrequentQuestions = new List<FrequentQuestion>()
         {
-            new FrequentQuestion() {Question="Why?",Answer="Because", Category="General"},
-            new FrequentQuestion() {Question="How much?", Answer="a lot", Category="Pricing" },
-            new FrequentQuestion() {Question="How?", Answer="Easy", Category="General" }
+            new FrequentQuestion() {Question="Why are you using our website?",Answer="Because I can't create my own", Category="General"},
+            new FrequentQuestion() {Question="How much you want to pay us for the service?", Answer="a lot of $", Category="Pricing" },
+            new FrequentQuestion() {Question="How easy is it to use website?", Answer="Easy", Category="General" },
+            new FrequentQuestion() {Question="How can I sign in?", Answer="are you stupid?", Category="Support" },
+            new FrequentQuestion() {Question="I registered but I didnt receive an email?", Answer="Too bad, call Microsoft support.", Category="Support" },
+            new FrequentQuestion() {Question="Is there a way to edit my page?", Answer="Yes, there is", Category="Support" },
+            new FrequentQuestion() {Question="Can I please delete my account?", Answer="Sorry, we need it to sell your data.", Category="General" }
         };
             FrequentQuestions.ForEach(q => context.faqs.Add(q));
         }

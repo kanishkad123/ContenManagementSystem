@@ -131,18 +131,72 @@ textarea {
     display: flex;
 }
 
-.FAQcontainer .sidenav {
-    height: 100vh;
-    width: 300px;
-    float: left;
-    position: relative;
-}
+    .FAQcontainer .sidenav {
+        height: 100vh;
+        width: 300px;
+        float: left;
+        position: relative;
+        margin: 0 1em;
+        
+    }
+
+
+
+        .FAQcontainer .sidenav .category, .FAQsearch {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 1.5em 2.5em;
+        }
+
+        .FAQcontainer .sidenav .category .active {
+            background-color: #ccc;
+        }
 
 .FAQcontainer #FAQ {
     height: 100vh;
     width: calc(100% - 200px);
     float: right;
     position: relative;
+}
+
+.FAQsearch .searchTerm {
+    width: 70%;
+    border: 0px solid #444;
+    border-right: none;
+    padding: 5px;
+    height: 40px;
+    max-width: 80%;
+    font-size: 25px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.FAQsearch .searchTerm:focus {
+    color: #555;
+}
+
+.FAQsearch .search {
+    width: 100%;
+}
+.FAQsearch .searchButton {
+    width: 40px;
+    height: 40px;
+    max-width: 200px;
+    background: #999;
+    font-size: 25px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.FAQsearch {
+    margin: 0 auto 2em;
+    width: 99%;
+    display:block;
+    text-align:center;
 }
 
 

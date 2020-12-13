@@ -12,12 +12,6 @@ namespace ContenManagementSystem.DAL
     {
         public CompanyContext() : base("DefaultConnection") {}
 
-        
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        }
-
         public DbSet<CompanyDescClass> CompanyDescClasses { get; set; }
         public DbSet<CompanyEmployee> Employees{ get; set; }
         public DbSet<CompanyOpenHours> OpenHours { get; set; }
