@@ -34,8 +34,11 @@ namespace ContenManagementSystem.Models
 
         public System.Data.Entity.DbSet<ContenManagementSystem.Models.ViewModel> ViewModels { get; set; }
 
+        public System.Data.Entity.DbSet<ContenManagementSystem.Models.LeftFooterModel> LeftFooterModels { get; set; }
         public System.Data.Entity.DbSet<ContenManagementSystem.Models.LeftFooterModel> LeftFooterModels { get; set; }*/
+        public DbSet<LeftFooterModel> LeftFooterModels { get; set; }
 
+        public DbSet<feedBackPage> feedBackPages { get; set; }
         public System.Data.Entity.DbSet<ContenManagementSystem.Models.Page> Pages { get; set; }
         //public System.Data.Entity.DbSet<ContenManagementSystem.Models.PageStructure> PageStructures { get; set; }
     }

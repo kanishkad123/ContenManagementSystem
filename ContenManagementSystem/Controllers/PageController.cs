@@ -75,7 +75,7 @@ namespace ContenManagementSystem.Controllers
         }
 
         [HttpPost]
-        public JsonResult saveNewPage(PageSettings model)
+        public ActionResult saveNewPage(PageSettings model)
         {
             if (!ModelState.IsValid) {
                 List<string> errors = new List<string>();
