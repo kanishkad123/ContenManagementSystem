@@ -10,10 +10,11 @@ namespace ContenManagementSystem.Models
     {
         [Key]
         public int Id { get; set; }
+        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email is not valid.")]
         public string senderEmailAddress { get; set; }
         public string feedBack { get; set; }
         public int rating { get; set; }
-
+        [Required(ErrorMessage = "Please enter name"), MaxLength(20)]
         public string subject { get; set; }
 
         public feedBackPage()

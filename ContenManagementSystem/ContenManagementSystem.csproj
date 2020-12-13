@@ -230,7 +230,6 @@
     <Content Include="MailTemplate\AccountConfirmation.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\FAQ.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
