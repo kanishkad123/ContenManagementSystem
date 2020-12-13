@@ -15,5 +15,6 @@ namespace ContenManagementSystem.Constants
             { 6,"<div class='col-md-2'></div>" },
             { 12,"<div class='col-md-1'></div>" }
         };
+        public static string rows = "<div class='row'>";
     }
 }

@@ -40,5 +40,6 @@ namespace ContenManagementSystem.Models
 
         public DbSet<feedBackPage> feedBackPages { get; set; }
         public System.Data.Entity.DbSet<ContenManagementSystem.Models.Page> Pages { get; set; }
+        //public System.Data.Entity.DbSet<ContenManagementSystem.Models.PageStructure> PageStructures { get; set; }
     }
 }

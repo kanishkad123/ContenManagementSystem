@@ -172,6 +172,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Constants\PageConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeftFooterModelsController.cs" />
     <Compile Include="Controllers\LeftFooterSController.cs" />
@@ -181,14 +183,19 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="DAL\LeftFooterContext.cs" />
     <Compile Include="DAL\LeftFooterInitializer.cs" />
+    <Compile Include="DAL\CompanyContext.cs" />
+    <Compile Include="DAL\CompanyInitializer.cs" />
     <Compile Include="DAL\DataInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CompanyOpenHours.cs" />
     <Compile Include="Models\CompanyDescClass.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\feedBackPage.cs" />
+    <Compile Include="Models\CompanyEmployee.cs" />
+    <Compile Include="Models\FrequentQuestion.cs" />
     <Compile Include="Models\HTMLElement.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeftFootereditor.cs" />
@@ -224,6 +231,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\FAQ.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -234,6 +242,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\pageCreator.js" />
+    <Content Include="Scripts\pageManager.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -288,9 +298,21 @@
     <Content Include="Views\LeftFooterModels\Edit.cshtml" />
     <Content Include="Views\LeftFooterModels\Index.cshtml" />
     <Content Include="Views\LeftFooterModels\LeftFooterView.cshtml" />
+    <Content Include="Views\Page\PageCreator.cshtml" />
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Company\Delete.cshtml" />
+    <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\FAQ\Create.cshtml" />
+    <Content Include="Views\FAQ\Delete.cshtml" />
+    <Content Include="Views\FAQ\Details.cshtml" />
+    <Content Include="Views\FAQ\Edit.cshtml" />
+    <Content Include="Views\FAQ\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

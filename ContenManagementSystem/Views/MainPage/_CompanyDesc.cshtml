@@ -50,9 +50,9 @@
                 <tr>
                     <td><strong>@day  </strong></td>
                     <td>
-                        @Model.company.OpenningHours[day]
+                        @Model.company.OpenHours.mondayOpen
                         <span> - </span>
-                        @Model.company.ClosingHours[day]
+                        @Model.company.OpenHours.mondayClose
                     </td>
                 </tr>
 
@@ -64,7 +64,7 @@
         <div id="staffFlex">
 
 
-            @foreach (ContenManagementSystem.Models.Employee emp in Model.company.Employees)
+            @foreach (ContenManagementSystem.Models.CompanyEmployee emp in Model.company.Employees)
             {
                 <div class="staffdiv">
                     <img src="@emp.pictureID" width="50" /><br />
