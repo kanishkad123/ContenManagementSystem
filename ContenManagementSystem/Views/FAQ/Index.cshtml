@@ -1,0 +1,92 @@
+﻿@model IEnumerable<ContenManagementSystem.Models.FrequentQuestion>
+@Scripts.Render("~/bundles/FAQ")
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Frequently Asked Questions</h2>
+<br />
+
+
+<div class="FAQcontainer">
+        <div class="sidenav">
+            
+            @if (ViewBag.CategorySelected)
+            {
+                <p>hello there</p>
+            }
+
+                @*@{
+                    HashSet<string> list = new HashSet<string>();
+                    foreach (var item in Model)
+                    {
+                        list.Add(item.Category);
+                    }
+                }*@
+
+                 
+                @foreach (var item in (ViewBag.Categories as ICollection<String>))
+                {
+                    @Html.ActionLink(item, "Index", new { Category=item })
+                }
+
+            </div>
+                
+
+
+        
+
+        <div class="content" id="FAQ">
+
+            @using Microsoft.AspNet.Identity
+            @if (!Request.IsAuthenticated && !User.IsInRole("Admin"))
+            {
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+            }
+
+
+            @foreach (var item in Model)
+            {
+                <button class="accordion">
+                    @Html.DisplayFor(modelItem => item.Question)
+
+                    <span style="float:right">
+                        @using Microsoft.AspNet.Identity
+                        @if (!Request.IsAuthenticated && !User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.FrequentQuestionID })
+                            <span>|</span>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.FrequentQuestionID })
+                        }
+                    </span>
+                </button>
+                <div class="panel">
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Answer)
+
+
+                    </p>
+                </div>
+            }
+        </div>
+</div>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }</script>
+
