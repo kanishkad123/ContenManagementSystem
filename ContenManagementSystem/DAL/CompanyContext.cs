@@ -21,5 +21,6 @@ namespace ContenManagementSystem.DAL
         public DbSet<CompanyDescClass> CompanyDescClasses { get; set; }
         public DbSet<CompanyEmployee> Employees{ get; set; }
         public DbSet<CompanyOpenHours> OpenHours { get; set; }
+        public DbSet<FrequentQuestion> faqs { get; set; }
     }
 }

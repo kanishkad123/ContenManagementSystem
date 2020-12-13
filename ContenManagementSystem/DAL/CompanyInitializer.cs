@@ -11,14 +11,10 @@ namespace ContenManagementSystem.DAL
 {
     public class CompanyInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<CompanyContext>
     {
-
-
         protected override void Seed(CompanyContext context)
         {
-
             var CompanyDescClasses = new List<CompanyDescClass>
             {
-
             new CompanyDescClass{
                 ShortDesc = "State of the art scamming company, with long proven history of facilitating businesses perferct the art of fraud, our mission is not to only deciet but to do it with style, we religiously practice what we preach on Juhanna.",
                 Address = "0 trace street, Toronto",
@@ -59,7 +55,6 @@ namespace ContenManagementSystem.DAL
                     fridayOpen="0800",fridayClose="1700",
                     saturdayOpen="1000",saturdayClose="1400",
                     sundayOpen="1000",sundayClose="1400"
-
                 },
                    Employees= new List<CompanyEmployee>()
                     {
@@ -70,19 +65,28 @@ namespace ContenManagementSystem.DAL
                         new CompanyEmployee() { pictureID = "../images/2.jpg", empName = "Pat", position = "OK" }
                     }
                 }
-
             };
 
-            CompanyDescClasses.ForEach(s => {
+            CompanyDescClasses.ForEach(s =>
+            {
                 context.CompanyDescClasses.Add(s);
                 context.OpenHours.Add(s.OpenHours);
                 foreach (CompanyEmployee employee in s.Employees)
                 {
                     context.Employees.Add(employee);
                 }
-
             });
             context.SaveChanges();
+
+
+            var FrequentQuestions = new List<FrequentQuestion>()
+        {
+            new FrequentQuestion() {Question="Why?",Answer="Because", Category="General"},
+            new FrequentQuestion() {Question="How much?", Answer="a lot", Category="Pricing" },
+            new FrequentQuestion() {Question="How?", Answer="Easy", Category="General" }
+        };
+            FrequentQuestions.ForEach(q => context.faqs.Add(q));
         }
+
     }
 }

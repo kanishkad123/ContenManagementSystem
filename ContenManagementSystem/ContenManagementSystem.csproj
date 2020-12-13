@@ -173,6 +173,7 @@
     <Compile Include="Constants\PageConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\LeftFooterController.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Models\CompanyOpenHours.cs" />
     <Compile Include="Models\CompanyDescClass.cs" />
     <Compile Include="Models\CompanyEmployee.cs" />
+    <Compile Include="Models\FrequentQuestion.cs" />
     <Compile Include="Models\HTMLElement.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeftFooterModel.cs" />
@@ -221,6 +223,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\FAQ.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -278,6 +281,11 @@
     <Content Include="Views\Company\Details.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\FAQ\Create.cshtml" />
+    <Content Include="Views\FAQ\Delete.cshtml" />
+    <Content Include="Views\FAQ\Details.cshtml" />
+    <Content Include="Views\FAQ\Edit.cshtml" />
+    <Content Include="Views\FAQ\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

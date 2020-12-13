@@ -17,7 +17,6 @@ namespace ContenManagementSystem.Models
 
         public virtual CompanyOpenHours OpenHours { get; set; }//maybe datatime?  //maybe just a list?
 
-
         public virtual ICollection<CompanyEmployee> Employees { get; set; } = new List<CompanyEmployee>();
 
         
