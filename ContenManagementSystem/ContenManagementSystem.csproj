@@ -184,6 +184,8 @@
     <Compile Include="Constants\PageConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\CompanyEmployeesController.cs" />
+    <Compile Include="Controllers\CompanyOpenHoursController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
@@ -222,6 +224,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\0.jpg" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
@@ -292,7 +295,6 @@
     <Content Include="Views\Page\PageCreator.cshtml" />
     <Content Include="Views\Company\Create.cshtml" />
     <Content Include="Views\Company\Delete.cshtml" />
-    <Content Include="Views\Company\Details.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\FAQ\Create.cshtml" />
@@ -300,6 +302,21 @@
     <Content Include="Views\FAQ\Details.cshtml" />
     <Content Include="Views\FAQ\Edit.cshtml" />
     <Content Include="Views\FAQ\Index.cshtml" />
+    <Content Include="Views\Company\CreateEmployees.cshtml" />
+    <Content Include="Views\Company\EditEmployees.cshtml" />
+    <Content Include="Views\Company\CreateOpenHours.cshtml" />
+    <Content Include="Views\Company\EditOpenHours.cshtml" />
+    <Content Include="Views\CompanyEmployees\Create.cshtml" />
+    <Content Include="Views\CompanyEmployees\Delete.cshtml" />
+    <Content Include="Views\CompanyEmployees\Details.cshtml" />
+    <Content Include="Views\CompanyEmployees\Edit.cshtml" />
+    <Content Include="Views\CompanyEmployees\Index.cshtml" />
+    <Content Include="Views\CompanyOpenHours\Create.cshtml" />
+    <Content Include="Views\CompanyOpenHours\Delete.cshtml" />
+    <Content Include="Views\CompanyOpenHours\Details.cshtml" />
+    <Content Include="Views\CompanyOpenHours\Edit.cshtml" />
+    <Content Include="Views\CompanyOpenHours\Index.cshtml" />
+    <Content Include="Views\Company\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

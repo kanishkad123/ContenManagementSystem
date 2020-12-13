@@ -1,0 +1,111 @@
+﻿@model IEnumerable<ContenManagementSystem.Models.CompanyOpenHours>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mondayOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mondayClose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tuesdayOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tuesdayClose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wednesdayOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wednesdayClose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thursdayOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thursdayClose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fridayOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fridayClose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.saturdayOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.saturdayClose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sundayOpen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sundayClose)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.mondayOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mondayClose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tuesdayOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tuesdayClose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wednesdayOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wednesdayClose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thursdayOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thursdayClose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fridayOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fridayClose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saturdayOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saturdayClose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sundayOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sundayClose)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CompanyOpenHoursID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CompanyOpenHoursID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CompanyOpenHoursID })
+        </td>
+    </tr>
+}
+
+</table>

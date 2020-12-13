@@ -33,11 +33,11 @@ namespace ContenManagementSystem.DAL
                 },
                    Employees= new List<CompanyEmployee>()
                     {
-                        new CompanyEmployee() { pictureID = "../images/1.jpg", empName = "Arnold", position = "Big Boss" } ,
-                        new CompanyEmployee() { pictureID = "../images/2.jpg", empName = "Maggie", position = "Cleaner" },
-                        new CompanyEmployee() { pictureID = "../images/3.jpg", empName = "Niko", position = "Conflict Resolution" },
-                        new CompanyEmployee() { pictureID = "../images/4.jpg", empName = "Borat", position = "Human resauces" },
-                        new CompanyEmployee() { pictureID = "../images/5.jpg", empName = "Johanna", position = "Junior Developer" }
+                        new CompanyEmployee() { pictureID = "~/images/1.jpg", empName = "Arnold", position = "Big Boss" } ,
+                        new CompanyEmployee() { pictureID = "~/images/2.jpg", empName = "Maggie", position = "Cleaner" },
+                        new CompanyEmployee() { pictureID = "~/images/3.jpg", empName = "Niko", position = "Conflict Resolution" },
+                        new CompanyEmployee() { pictureID = "~/images/4.jpg", empName = "Borat", position = "Human resauces" },
+                        new CompanyEmployee() { pictureID = "~/images/5.jpg", empName = "Johanna", position = "Junior Developer" }
                     }
                 },
 
@@ -58,11 +58,11 @@ namespace ContenManagementSystem.DAL
                 },
                    Employees= new List<CompanyEmployee>()
                     {
-                        new CompanyEmployee() { pictureID = "../images/3.jpg", empName = "Seb", position = "CEO" } ,
-                        new CompanyEmployee() { pictureID = "../images/1.jpg", empName = "Dan", position = "HR" },
-                        new CompanyEmployee() { pictureID = "../images/4.jpg", empName = "Rob", position = "PR" },
-                        new CompanyEmployee() { pictureID = "../images/5.jpg", empName = "Fat", position = "IT" },
-                        new CompanyEmployee() { pictureID = "../images/2.jpg", empName = "Pat", position = "OK" }
+                        new CompanyEmployee() { pictureID = "~/images/3.jpg", empName = "Seb", position = "CEO" } ,
+                        new CompanyEmployee() { pictureID = "~/images/1.jpg", empName = "Dan", position = "HR" },
+                        new CompanyEmployee() { pictureID = "~/images/4.jpg", empName = "Rob", position = "PR" },
+                        new CompanyEmployee() { pictureID = "~/images/5.jpg", empName = "Fat", position = "IT" },
+                        new CompanyEmployee() { pictureID = "~/images/2.jpg", empName = "Pat", position = "OK" }
                     }
                 }
             };

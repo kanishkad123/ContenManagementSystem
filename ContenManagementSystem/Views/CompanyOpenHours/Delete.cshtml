@@ -1,0 +1,136 @@
+﻿@model ContenManagementSystem.Models.CompanyOpenHours
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CompanyOpenHours</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mondayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mondayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mondayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mondayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tuesdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tuesdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tuesdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tuesdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wednesdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wednesdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wednesdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wednesdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thursdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thursdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thursdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thursdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fridayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fridayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fridayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fridayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saturdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saturdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saturdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saturdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sundayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sundayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sundayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sundayClose)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
