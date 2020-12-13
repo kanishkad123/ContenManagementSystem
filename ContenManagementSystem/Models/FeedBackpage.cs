@@ -14,6 +14,15 @@ namespace ContenManagementSystem.Models
         public string feedBack { get; set; }
         public int rating { get; set; }
 
-        public int subject { get; set; }
+        public string subject { get; set; }
+
+        public feedBackPage(int id, string senderEmailAddress, string feedBack, int rating, string subject)
+        {
+            Id = id;
+            this.senderEmailAddress = senderEmailAddress;
+            this.feedBack = feedBack;
+            this.rating = rating;
+            this.subject = subject;
+        }
     }
 }
