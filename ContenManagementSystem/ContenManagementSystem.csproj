@@ -187,7 +187,7 @@
     <Compile Include="DAL\CompanyContext.cs" />
     <Compile Include="DAL\CompanyInitializer.cs" />
     <Compile Include="DAL\DataInitializer.cs" />
-    <Compile Include="feedBackPagesController.cs" />
+    <Compile Include="Controllers\feedBackPagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -320,6 +320,7 @@
     <Content Include="Views\feedBackPages\Details.cshtml" />
     <Content Include="Views\feedBackPages\Edit.cshtml" />
     <Content Include="Views\feedBackPages\Index.cshtml" />
+    <Content Include="Views\feedBackPages\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
