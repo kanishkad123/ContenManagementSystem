@@ -16,6 +16,10 @@ namespace ContenManagementSystem.DAL
             };
             pages.ForEach(pg => context.Pages.Add(pg));
             context.SaveChanges();
+
+            context.LeftFooterModels.Add(new LeftFooterModel(1, "Hi i am suvvansh", "there is a way", "youtube.com", 6, "yes thats youtube"));
+
+            context.SaveChanges();
         }
     }
 }

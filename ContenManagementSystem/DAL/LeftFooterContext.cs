@@ -9,8 +9,8 @@ using System.Web;
 namespace ContenManagementSystem.DAL
 {
     public class LeftFooterContext:DbContext
-    {public LeftFooterContext() : base("LeftFooterContext") { 
-        }
+    {
+        public LeftFooterContext() : base("DefaultConnection") {}
         public DbSet<LeftFooterModel> leftFooterModel { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

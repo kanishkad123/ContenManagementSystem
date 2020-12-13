@@ -173,6 +173,8 @@
     <Compile Include="Constants\PageConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeftFooterModelsController.cs" />
+    <Compile Include="Controllers\LeftFooterSController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\LeftFooterController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -272,6 +274,17 @@
     <Content Include="Views\MainPage\_LeftFooter.cshtml" />
     <Content Include="Views\LeftFooter\View.cshtml" />
     <Content Include="Views\LeftFooter\edit.cshtml" />
+    <Content Include="Views\LeftFooterS\Create.cshtml" />
+    <Content Include="Views\LeftFooterS\Delete.cshtml" />
+    <Content Include="Views\LeftFooterS\Details.cshtml" />
+    <Content Include="Views\LeftFooterS\Edit.cshtml" />
+    <Content Include="Views\LeftFooterS\Index.cshtml" />
+    <Content Include="Views\LeftFooterModels\Create.cshtml" />
+    <Content Include="Views\LeftFooterModels\Delete.cshtml" />
+    <Content Include="Views\LeftFooterModels\Details.cshtml" />
+    <Content Include="Views\LeftFooterModels\Edit.cshtml" />
+    <Content Include="Views\LeftFooterModels\Index.cshtml" />
+    <Content Include="Views\LeftFooterModels\LeftFooterView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
