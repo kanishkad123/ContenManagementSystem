@@ -29,4 +29,22 @@ namespace ContenManagementSystem.Models
         //public string DivisionId { get; set; }
         //public string Sectiontext { get; set; }
     }
+    public class PageSettings
+    {
+        public string pageName { get; set; }
+        public List<SetionSettings> sections { get; set; }
+    }
+
+    public class SetionSettings
+    {
+        public string sectionNumber { get; set; }
+        public List<DivisionSettings> divs { get; set; }
+    }
+
+    public class DivisionSettings
+    {
+        public string divnumber { get; set; }
+        public string divtype { get; set; }
+        public string divData { get; set; }
+    }
 }

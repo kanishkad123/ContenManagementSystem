@@ -74,19 +74,8 @@ namespace ContenManagementSystem.Controllers
             return context.Pages.Where(p => p.PageId == pageId).Select(p => p.PageHTML).FirstOrDefault();
         }
 
-        //private string markupCreator(PageManagerView pageManagerView)
-        //{            
-        //    string s = "<div class='container'><div class='row'>";
-        //    for (int i = 0; i < Convert.ToInt32(pageManagerView.NumberOfDivisions); i++)
-        //    {
-        //        s += PageConstants.cols[Convert.ToInt32(pageManagerView.NumberOfDivisions)];
-        //    }
-        //    s += "</div></div>";
-        //    return s;
-        //}
-
         [HttpPost]
-        public JsonResult temp(Tester model)
+        public JsonResult saveNewPage(PageSettings model)
         {
             string s = "<div class='container'>";
             for (int i = 0; i < model.sections.Count; i++)
@@ -130,59 +119,8 @@ namespace ContenManagementSystem.Controllers
             {
                 dbContext.Pages.Add(new Page { PageId = model.pageName, PageHTML = htmlFinal });
                 dbContext.SaveChanges();
-                //dbContext.PageStructures.Add(new PageStructure
-                //{
-                //    pageName = model.pageName,
-                //    numberOfSections = item.sectionNumber,
-                //    numberOfDivisions = item.divisions
-                //});
-                //dbContext.SaveChanges();
             }
             return Json(new { result = "Success" });
         }
-
-        //[HttpPost]
-        //public JsonResult pageSections(string pageName)
-        //{
-        //    string pageSec = "";
-        //    using (ApplicationDbContext dbContext = new ApplicationDbContext())
-        //    {
-        //        pageSec = dbContext.PageStructures.Where(p => p.pageName == pageName)
-        //            .OrderBy(p=>p.numberOfSections+" "+ "descending").FirstOrDefault().numberOfSections;
-        //    }
-        //    return Json(new { sections = pageSec });
-        //}
-
-        //[HttpPost]
-        //public JsonResult pageDivisions(string pageSectionNumber)
-        //{
-        //    string div = "";
-        //    using (ApplicationDbContext dbContext = new ApplicationDbContext())
-        //    {
-        //        div = dbContext.PageStructures.Where(p => p.pageName == pageSectionNumber.Split('&')[0] && p.numberOfSections == pageSectionNumber.Split('&')[1])
-        //            .FirstOrDefault().numberOfDivisions;
-        //    }
-        //    return Json(new { divisions = div });
-        //}
-
-    }
-
-    public class Tester
-    {
-        public string pageName { get; set; }
-        public List<tem> sections { get; set; }
-    }
-
-    public class tem
-    {
-        public string sectionNumber { get; set; }
-        public List<tt> divs { get; set; }
-    }
-
-    public class tt
-    {
-        public string divnumber { get; set; }
-        public string divtype { get; set; }
-        public string divData { get; set; }
-    }
+    }   
 }

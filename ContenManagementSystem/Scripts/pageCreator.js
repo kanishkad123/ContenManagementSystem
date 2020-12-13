@@ -114,7 +114,7 @@ function save2() {
         sections: sectionsToSave
     }
 
-    fetch(window.location.protocol + "//" + window.location.host + "/Page/temp", {
+    fetch(window.location.protocol + "//" + window.location.host + "/Page/saveNewPage", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ function save() {
     //     divisionType: document.getElementById('divisionType').value
     // };
 
-    fetch(window.location.protocol + "//" + window.location.host + "/Page/temp", {
+    fetch(window.location.protocol + "//" + window.location.host + "/Page/savePageSettings", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
