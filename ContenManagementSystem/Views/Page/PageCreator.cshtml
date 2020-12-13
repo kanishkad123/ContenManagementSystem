@@ -13,19 +13,21 @@
 <body>
     <div>
         <p>
-            <input type="text" name="pageName" id="pageName" value="" placeholder="About" />
+            <label>Page Name : </label>
+            <input type="text" name="pageName" id="pageName" value="" placeholder="Page Name" />
         </p>
         <p>
             <label>Number of sections : </label>
             <input type="number" name="numberOfSections" id="numberOfSections" min="1" max="10" onchange="onChangeNumberOfSections()" />
         </p>
         <p>
-            <label>Select section number : </label>
+            @*<label>Select section number : </label>
             <select id="sectionNumber" onchange="onChangeSectionNumber()">
                 <option value="0">-- Select one --</option>
-            </select>
+            </select>*@
+            <div id="sectionDivisions"></div>
         </p>
-        <p>
+        @*<p>
             <label>Number of divisions : </label>
             <select id="numberOfDivisions" onchange="onChangeNumberOfDivisions()">
                 <option value="1">1</option>
@@ -50,8 +52,8 @@
                     <option value="video">Video (Embed)</option>
                     <option value="custom">Custom</option>
                 </select>
-            </div>
-        <button id="Save" onclick="save()">Save</button>
+            </div>*@
+        <button id="Save" onclick="save2()">Save</button>
     </div>
     <script type="text/javascript" src="~/Scripts/pageCreator.js"></script>
 </body>
