@@ -122,6 +122,21 @@ function save2() {
         body: JSON.stringify(modData),
     })
         .then(data => {
+            if (data["result"] == "Failure") {
+                alert("Failure");
+                let errors = document.getElementById("errors");
+                while (errors.hasChildNodes()) {
+                    errors.removeChild(errors.lastChild);
+                }
+                let listError = document.createElement("ul");
+                data["errors"].map((e) => {
+                    let errorItem = document.createElement("li");
+                    errorItem.innerHTML = e;
+                    listError.appendChild(errorItem);
+                });
+                errors.appendChild(listError);
+                return;
+            }
             let a = document.createElement("a");
             a.setAttribute("href", window.location.protocol + "//" + window.location.host + "/Page/Index/"+modData.pageName)
             a.click();

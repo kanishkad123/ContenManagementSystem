@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,20 +32,27 @@ namespace ContenManagementSystem.Models
     }
     public class PageSettings
     {
+        [Required]
         public string pageName { get; set; }
+        [Required]
         public List<SetionSettings> sections { get; set; }
     }
 
     public class SetionSettings
     {
+        [Required]
         public string sectionNumber { get; set; }
+        [Required]
         public List<DivisionSettings> divs { get; set; }
     }
 
     public class DivisionSettings
     {
+        [Required]
         public string divnumber { get; set; }
+        [Required]
         public string divtype { get; set; }
+        [Required]
         public string divData { get; set; }
     }
 }

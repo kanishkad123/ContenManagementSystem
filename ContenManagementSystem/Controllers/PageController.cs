@@ -77,6 +77,18 @@ namespace ContenManagementSystem.Controllers
         [HttpPost]
         public JsonResult saveNewPage(PageSettings model)
         {
+            if (!ModelState.IsValid) {
+                List<string> errors = new List<string>();
+                foreach (var item in ModelState.Values)
+                {
+                    for (int i = 0; i < item.Errors.Count; i++)
+                    {
+                        errors.Add(item.Errors[i].ErrorMessage);
+                    }
+                }
+                return Json(new { result = "Failure", errors = errors });
+            }
+
             string s = "<div class='container'>";
             for (int i = 0; i < model.sections.Count; i++)
             {
