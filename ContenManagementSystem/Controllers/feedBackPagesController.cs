@@ -131,7 +131,7 @@ namespace ContenManagementSystem
                     var receiverEmail = new MailAddress("suvaansh1996@gmail.com", "suvaansh");
                     var password = "test@1234";
                     var sub = subject;
-                    var body = message;
+                    var body = message+" sender mail address= "+ receiver;
                     var smtp = new SmtpClient
                     {   
                         Host = "smtp.gmail.com",
