@@ -9,109 +9,109 @@ using System.Web.Mvc;
 using ContenManagementSystem.DAL;
 using ContenManagementSystem.Models;
 
-namespace ContenManagementSystem.Controllers
+namespace ContenManagementSystem
 {
-    public class PagesController : Controller
+    public class feedBackPagesController : Controller
     {
         private LeftFooterContext db = new LeftFooterContext();
 
-        // GET: Pages
+        // GET: feedBackPages
         public ActionResult Index()
         {
-            return View(db.Pages.ToList().FirstOrDefault());
+            return View(db.feedBackPages.ToList().FirstOrDefault());
         }
 
-        // GET: Pages/Details/5
-        public ActionResult Details(string id)
+        // GET: feedBackPages/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
-            if (page == null)
+            feedBackPage feedBackPage = db.feedBackPages.Find(id);
+            if (feedBackPage == null)
             {
                 return HttpNotFound();
             }
-            return View(page);
+            return View(feedBackPage);
         }
 
-        // GET: Pages/Create
+        // GET: feedBackPages/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Pages/Create
+        // POST: feedBackPages/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PageId,PageHTML")] Page page)
+        public ActionResult Create([Bind(Include = "Id,senderEmailAddress,feedBack,rating,subject")] feedBackPage feedBackPage)
         {
             if (ModelState.IsValid)
             {
-                db.Pages.Add(page);
+                db.feedBackPages.Add(feedBackPage);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(page);
+            return View(feedBackPage);
         }
 
-        // GET: Pages/Edit/5
-        public ActionResult Edit(string id)
+        // GET: feedBackPages/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
-            if (page == null)
+            feedBackPage feedBackPage = db.feedBackPages.Find(id);
+            if (feedBackPage == null)
             {
                 return HttpNotFound();
             }
-            return View(page);
+            return View(feedBackPage);
         }
 
-        // POST: Pages/Edit/5
+        // POST: feedBackPages/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PageId,PageHTML")] Page page)
+        public ActionResult Edit([Bind(Include = "Id,senderEmailAddress,feedBack,rating,subject")] feedBackPage feedBackPage)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(page).State = EntityState.Modified;
+                db.Entry(feedBackPage).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(page);
+            return View(feedBackPage);
         }
 
-        // GET: Pages/Delete/5
-        public ActionResult Delete(string id)
+        // GET: feedBackPages/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
-            if (page == null)
+            feedBackPage feedBackPage = db.feedBackPages.Find(id);
+            if (feedBackPage == null)
             {
                 return HttpNotFound();
             }
-            return View(page);
+            return View(feedBackPage);
         }
 
-        // POST: Pages/Delete/5
+        // POST: feedBackPages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Page page = db.Pages.Find(id);
-            db.Pages.Remove(page);
+            feedBackPage feedBackPage = db.feedBackPages.Find(id);
+            db.feedBackPages.Remove(feedBackPage);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
