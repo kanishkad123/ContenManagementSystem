@@ -29,5 +29,9 @@ namespace ContenManagementSystem.Models
             this.noofLikes = noofLikes;
             this.videoDescription = videoDescription;
         }
+
+        public LeftFooterModel()
+        {
+        }
     }
 }
