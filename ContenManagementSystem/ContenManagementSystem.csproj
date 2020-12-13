@@ -188,8 +188,10 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyDescClass.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\feedBackPage.cs" />
     <Compile Include="Models\HTMLElement.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LeftFootereditor.cs" />
     <Compile Include="Models\LeftFooterModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Page.cs" />
