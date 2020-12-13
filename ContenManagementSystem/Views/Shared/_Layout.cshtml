@@ -24,6 +24,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Add Page", "PageCreator", "Page")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

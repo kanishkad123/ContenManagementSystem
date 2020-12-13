@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using ContenManagementSystem.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ContenManagementSystem
 {
@@ -63,6 +64,38 @@ namespace ContenManagementSystem
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+            createRolesandUsers();
         }
+        private void createRolesandUsers()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            // Admin Role and creating a default Admin User     
+            if (!roleManager.RoleExists("Admin"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+
+                //Create Admin super user who will maintain the CMS website                   
+                var user = new ApplicationUser();
+                user.EmailConfirmed = true;
+                user.UserName = "kanishka";
+                user.Email = "markent62@gmail.com";
+
+                string userPWD = "Asd@123";
+
+                var chkUser = UserManager.Create(user, userPWD);
+
+                //Add default User to Role Admin    
+                if (chkUser.Succeeded)
+                {
+                    UserManager.AddToRole(user.Id, "Admin");
+                }
+            }
+        }
+
     }
 }
