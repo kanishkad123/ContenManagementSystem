@@ -20,7 +20,7 @@ namespace ContenManagementSystem.Models
         public String videourl { get; set; }
 
         public int noofLikes { get; set; }
-        [Required(ErrorMessage = "Please enter name"), MaxLength(30)]
+        [Required(ErrorMessage = "Please enter name"), MaxLength(100)]
         public String videoDescription { get; set; }
 
         public LeftFooterModel(int id, string para1, string para2, string videourl, int noofLikes, string videoDescription)
