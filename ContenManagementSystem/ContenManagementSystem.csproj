@@ -184,14 +184,12 @@
     <Compile Include="Constants\PageConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
-    <Compile Include="Controllers\CompanyEmployeesController.cs" />
-    <Compile Include="Controllers\CompanyOpenHoursController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeftFooterModelsController.cs" />
-    <Compile Include="Controllers\LeftFooterSController.cs" />
+    <Compile Include="RecycloBeen\LeftFooterSController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
-    <Compile Include="Controllers\LeftFooterController.cs" />
+    <Compile Include="RecycloBeen\LeftFooterController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
@@ -242,6 +240,9 @@
     <Content Include="images\Icon\iconfinder_multimedia-01_2849835.png" />
     <Content Include="images\Icon\iconfinder_SocialMedia_Website-Outline_2959741.png" />
     <Content Include="images\Icon\iconfinder_time_4295555.png" />
+    <Content Include="images\leftbanner.jpg" />
+    <Content Include="images\rightbanner.jpg" />
+    <Content Include="images\userbanner.jpg" />
     <Content Include="MailTemplate\AccountConfirmation.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -300,15 +301,15 @@
     <Content Include="Views\Page\DynamicPageManager.cshtml" />
     <Content Include="Views\MainPage\Main.cshtml" />
     <Content Include="Views\MainPage\_CompanyDesc.cshtml" />
-    <Content Include="Views\LeftFooter\LeftFooterView.cshtml" />
+    <Content Include="RecycloBeen\LeftFooter\LeftFooterView.cshtml" />
     <Content Include="Views\MainPage\_LeftFooter.cshtml" />
-    <Content Include="Views\LeftFooter\View.cshtml" />
-    <Content Include="Views\LeftFooter\edit.cshtml" />
-    <Content Include="Views\LeftFooterS\Create.cshtml" />
-    <Content Include="Views\LeftFooterS\Delete.cshtml" />
-    <Content Include="Views\LeftFooterS\Details.cshtml" />
-    <Content Include="Views\LeftFooterS\Edit.cshtml" />
-    <Content Include="Views\LeftFooterS\Index.cshtml" />
+    <Content Include="RecycloBeen\LeftFooter\View.cshtml" />
+    <Content Include="RecycloBeen\LeftFooter\edit.cshtml" />
+    <Content Include="RecycloBeen\LeftFooterS\Create.cshtml" />
+    <Content Include="RecycloBeen\LeftFooterS\Delete.cshtml" />
+    <Content Include="RecycloBeen\LeftFooterS\Details.cshtml" />
+    <Content Include="RecycloBeen\LeftFooterS\Edit.cshtml" />
+    <Content Include="RecycloBeen\LeftFooterS\Index.cshtml" />
     <Content Include="Views\LeftFooterModels\Create.cshtml" />
     <Content Include="Views\LeftFooterModels\Delete.cshtml" />
     <Content Include="Views\LeftFooterModels\Details.cshtml" />
@@ -329,16 +330,6 @@
     <Content Include="Views\Company\EditEmployees.cshtml" />
     <Content Include="Views\Company\CreateOpenHours.cshtml" />
     <Content Include="Views\Company\EditOpenHours.cshtml" />
-    <Content Include="Views\CompanyEmployees\Create.cshtml" />
-    <Content Include="Views\CompanyEmployees\Delete.cshtml" />
-    <Content Include="Views\CompanyEmployees\Details.cshtml" />
-    <Content Include="Views\CompanyEmployees\Edit.cshtml" />
-    <Content Include="Views\CompanyEmployees\Index.cshtml" />
-    <Content Include="Views\CompanyOpenHours\Create.cshtml" />
-    <Content Include="Views\CompanyOpenHours\Delete.cshtml" />
-    <Content Include="Views\CompanyOpenHours\Details.cshtml" />
-    <Content Include="Views\CompanyOpenHours\Edit.cshtml" />
-    <Content Include="Views\CompanyOpenHours\Index.cshtml" />
     <Content Include="Views\Company\View.cshtml" />
     <Content Include="Views\Pages\Create.cshtml" />
     <Content Include="Views\Pages\Delete.cshtml" />
@@ -351,6 +342,7 @@
     <Content Include="Views\feedBackPages\Edit.cshtml" />
     <Content Include="Views\feedBackPages\Index.cshtml" />
     <Content Include="Views\feedBackPages\SendEmail.cshtml" />
+    <Content Include="Views\MainPage\oldMain.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
