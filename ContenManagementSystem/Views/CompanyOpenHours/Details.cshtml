@@ -1,0 +1,130 @@
+﻿@model ContenManagementSystem.Models.CompanyOpenHours
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CompanyOpenHours</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mondayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mondayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mondayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mondayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tuesdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tuesdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tuesdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tuesdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wednesdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wednesdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wednesdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wednesdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thursdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thursdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thursdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thursdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fridayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fridayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fridayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fridayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saturdayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saturdayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saturdayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saturdayClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sundayOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sundayOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sundayClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sundayClose)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyOpenHoursID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
