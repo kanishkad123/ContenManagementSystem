@@ -242,6 +242,8 @@
     <Content Include="MailTemplate\AccountConfirmation.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\FAQ.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
