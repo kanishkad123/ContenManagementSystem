@@ -24,8 +24,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact Us", "SendEmail", "feedBackPages")</li>
                     <li>@Html.ActionLink("FAQs", "Index", "FAQ")</li>
+                    <li>@Html.ActionLink("Feedback page", "Create", "feedBackPages")</li>
                     @using Microsoft.AspNet.Identity
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
