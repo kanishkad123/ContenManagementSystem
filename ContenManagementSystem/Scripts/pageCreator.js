@@ -120,21 +120,24 @@ function save2() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(modData),
-    })
-        .then(data => {
-            if (data["result"] == "Failure") {
-                alert("Failure");
+    }).then(response => {
+        if (response["status"] == 400) {
+                alert("Error");
                 let errors = document.getElementById("errors");
                 while (errors.hasChildNodes()) {
                     errors.removeChild(errors.lastChild);
                 }
-                let listError = document.createElement("ul");
-                data["errors"].map((e) => {
+            let listError = document.createElement("ul");
+            JSON.parse(response["statusText"]).map((e) => {
                     let errorItem = document.createElement("li");
                     errorItem.innerHTML = e;
                     listError.appendChild(errorItem);
                 });
-                errors.appendChild(listError);
+            errors.appendChild(listError);
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
                 return;
             }
             let a = document.createElement("a");

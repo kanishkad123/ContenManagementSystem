@@ -1,9 +1,11 @@
 ﻿using ContenManagementSystem.Constants;
 using ContenManagementSystem.Models;
 using HtmlAgilityPack;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,7 +14,7 @@ namespace ContenManagementSystem.Controllers
     //[Authorize]
     public class PageController : Controller
     {
-        // GET: Page
+        // Get page and render based on the url parameter.
         public ActionResult Index()
         {
             string pageId = Convert.ToString(Url.RequestContext.RouteData.Values["id"]);
@@ -37,6 +39,8 @@ namespace ContenManagementSystem.Controllers
                 return View("DynamicPageManager");
             }
         }
+        
+        //Allow only admins to render the page creator page so that they will be able to create new pages but let the pages be viewed by everyone
         [Authorize(Roles= "Admin")]
         public ActionResult PageCreator()
         {
@@ -74,6 +78,8 @@ namespace ContenManagementSystem.Controllers
             return context.Pages.Where(p => p.PageId == pageId).Select(p => p.PageHTML).FirstOrDefault();
         }
 
+        
+        //Save the details of the page and in the process create the html based on the model sent from the client
         [HttpPost]
         public ActionResult saveNewPage(PageSettings model)
         {
@@ -86,7 +92,20 @@ namespace ContenManagementSystem.Controllers
                         errors.Add(item.Errors[i].ErrorMessage);
                     }
                 }
+                HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                HttpContext.Response.StatusDescription = JsonConvert.SerializeObject(errors);
                 return Json(new { result = "Failure", errors = errors });
+            }
+
+            using (ApplicationDbContext dbContext = new ApplicationDbContext())
+            {
+                var duplicatePage = dbContext.Pages.Where(p=>p.PageId==model.pageName).FirstOrDefault();
+                if(duplicatePage != null)
+                {
+                    HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    HttpContext.Response.StatusDescription = JsonConvert.SerializeObject(new List<string> { "Page with the same name already exists."});
+                    return Json(new { result = "Failure" });
+                }
             }
 
             string s = "<div class='container'>";
